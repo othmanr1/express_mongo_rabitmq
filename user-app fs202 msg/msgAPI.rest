@@ -1,0 +1,9 @@
+####
+
+POST  http://localhost:3080/msg/Add
+content-type: application/json
+
+{
+   
+    "msgDesc" :"Bonjour fs202"
+}

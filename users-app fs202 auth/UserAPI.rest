@@ -1,0 +1,60 @@
+####
+POST  http://localhost:3030/Roles/Add
+content-type: application/json
+
+{
+    "roleCode": "admin",
+    "roleDesc" :"admin application"
+}
+
+#####
+
+
+POST  http://localhost:3030/Roles/Add
+content-type: application/json
+
+{
+    "roleCode": "guest",
+    "roleDesc" :"guest application"
+}
+
+#####
+
+POST  http://localhost:3030/users/register
+content-type: application/json
+
+{
+    "fullName": "Rais Othmane",
+    "email": "Othmane3@test.com",
+    "password" :"1234",
+    "role" :["643a6ec8e3c43f9baa364a7f"]
+}
+####
+
+POST  http://localhost:3030/users/register
+content-type: application/json
+
+{
+    "fullName": "Rais Hamza",
+    "email": "Hamza3@test.com",
+    "password" :"12345",
+    "role" :["643a6eece3c43f9baa364a81"]
+}
+####
+POST  http://localhost:3030/users/login
+content-type: application/json
+
+{
+    "email": "othmane3@test.com",
+    "password" :"1234"
+}
+
+
+####
+POST  http://localhost:3030/users/login
+content-type: application/json
+
+{
+    "email": "hamza3@test.com",
+    "password" :"12345"
+}
