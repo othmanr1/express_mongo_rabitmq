@@ -58,3 +58,14 @@ content-type: application/json
     "email": "hamza3@test.com",
     "password" :"12345"
 }
+
+###
+
+GET http://localhost:3030/users/find
+
+Content-Type: application/json
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjQzYTZmNDRlM2M0M2Y5YmFhMzY0YTg0IiwiZW1haWwiOiJvdGhtYW5lM0B0ZXN0LmNvbSIsInBlcm1pc3Npb25zIjpbImFkbWluIl0sImlhdCI6MTY4MjM1NzM5NywiZXhwIjoxNjgyMzY0NTk3fQ.O_wynXp-AfByHtPZ_ByjfYx5W-7MeM8tzXH9lcIfASQ
+###
+
+###
+
