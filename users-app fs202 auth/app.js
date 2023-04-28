@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express();
+const amqp = require('amqplib');
 
 const db = require("./config/db")
 const errorHandler = require('./middleware/errors');
@@ -37,4 +38,35 @@ app.use(function (err, req, res, next) {
     }
   });
 app.listen(process.env.APP_PORT);
+
+
+async function send(){
+  const conn = await amqp.connect('amqp://localhost');
+  const channel = await conn.createChannel();
+  await channel.assertQueue('hello');
+  await channel.sendToQueue('hello' , Buffer.from('Hello world FS202'));
+  console.log('msg has been sent ');
+  await channel.close();
+  await conn.close();
+
+}
+
+async function recive(){
+  const conn = await amqp.connect('amqp://localhost');
+  const channel = await conn.createChannel();
+  await channel.assertQueue('hello');
+  console.log('waiting for responce ... ! ');
+
+
+  channel.consume('hello' , msg => {
+
+    console.log(`Recived '${msg.content.toString()}' ` );
+  } , {noAck:true});
+ 
+
+}
+
+send();
+recive();
+
 
