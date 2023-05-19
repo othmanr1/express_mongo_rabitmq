@@ -73,7 +73,7 @@ exports.subscribe = async (req,res)=>{
   }
 
 exports.findAll = (req, res) => {
-    console.log(req.user)
+    console.log('h')
      
       User.find()
       .then(data => {

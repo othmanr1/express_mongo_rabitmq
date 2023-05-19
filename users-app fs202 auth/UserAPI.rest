@@ -61,10 +61,11 @@ content-type: application/json
 
 ###
 
-GET http://localhost:3030/users/find
+GET http://localhost:3030/users/findall
 
 Content-Type: application/json
-Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjQzYTZmNDRlM2M0M2Y5YmFhMzY0YTg0IiwiZW1haWwiOiJvdGhtYW5lM0B0ZXN0LmNvbSIsInBlcm1pc3Npb25zIjpbImFkbWluIl0sImlhdCI6MTY4MjM1NzM5NywiZXhwIjoxNjgyMzY0NTk3fQ.O_wynXp-AfByHtPZ_ByjfYx5W-7MeM8tzXH9lcIfASQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjQ0YmY0YWRiNjMwNWIzMWZjMGFlYTA4IiwiZW1haWwiOiJvdGhtYW5lM0B0ZXN0LmNvbSIsInBlcm1pc3Npb25zIjpbXSwiaWF0IjoxNjgyNjk5NTIxLCJleHAiOjE2ODI3MDY3MjF9.h1UWaVv_bpFotMExyId1684AtbgcEthpRVQ1rRuoMNQ
+
 ###
 
 ###

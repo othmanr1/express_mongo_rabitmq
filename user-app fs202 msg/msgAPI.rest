@@ -4,6 +4,54 @@ POST  http://localhost:3080/msg/Add
 content-type: application/json
 
 {
-   
+
     "msgDesc" :"Bonjour fs202"
 }
+
+
+####
+
+POST  http://localhost:3080/msg/Add_msg_rabbitMQ_send
+content-type: application/json
+
+{
+
+    "msgDesc" :"hi its me !! normal exchange reviced in controller "
+}
+####
+
+POST  http://localhost:3080/msg/Add_msg_rabbitMQ_direct
+content-type: application/json
+
+{
+
+    "msgDesc" :"hi its me !! direct exchange reviced in controller "
+}
+Add_msg_rabbitMQ_recivedirect
+####
+POST  http://localhost:3080/msg/Add_msg_rabbitMQ_fanout
+content-type: application/json
+
+{
+
+    "msgDesc" :"hi its me !! fanout exchange reviced in controller "
+}
+Add_msg_rabbitMQ_recivedirect
+####
+POST  http://localhost:3080/msg/Add_msg_rabbitMQ_topic
+content-type: application/json
+
+{
+    "msgDesc" :"hi its me !! topic exchange sent  in controller ",
+    "routingKey" :"info.test"
+
+}
+Add_msg_rabbitMQ_topic
+
+######
+GET http://localhost:3080/msg/Add_msg_rabbitMQ_recive
+content-type: application/json
+######
+GET http://localhost:3080/msg/Add_msg_rabbitMQ_recivedirect
+content-type: application/json
+

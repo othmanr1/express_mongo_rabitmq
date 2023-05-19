@@ -4,8 +4,8 @@ const config = process.env;
 
 const verifyToken = (req, res, next) => {
   const token =
-  req.headers && req.headers.authorization && req.headers.authorization.split(' ')[0] === 'JWT';
-
+  req.headers && req.headers.authorization && req.headers.authorization.split(' ')[0] === 'Bearer';
+console.log(req.headers)
   if (!token) {
     return res.status(403).send("A token is required for authentication");
   }

@@ -5,7 +5,10 @@ const auth = require("../middleware/auth");
 const usr = require('../controllers/user.controller')
 
 
-route.get('/find', auth, guard.check('admin'), usr.findAll);
+route.get('/findall',
+ auth,
+//  guard.check('admin'),
+  usr.findAll);
 
 route.post('/register', usr.subscribe);
 route.post('/login', usr.login);
