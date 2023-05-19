@@ -2,13 +2,23 @@ const express = require('express');
 const errorshandle = require('./middleware/errors')
 const app = express();
 
-
+const logger = require('./middleware/logger');
 const db = require("./config/db")
 const amqp = require("amqplib");
 
 
 
 
+app.use((req, res, next) => {
+  logger.info({
+    message: 'HTTP request',
+    method: req.method,
+    url: req.url,
+    ip: req.ip,
+    headers: req.headers
+  });
+  next();
+});
 
 
 app.use(express.json())
@@ -90,5 +100,7 @@ async function receivedtopic() {
    receivedtopic();
   
   app.use(errorshandle);
+
   app.listen(process.env.APP_PORT);
+  
   
